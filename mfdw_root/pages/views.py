@@ -1,5 +1,5 @@
-from django.shortcuts import render
-# from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+
 from . models import Page
 
 def index(request, pagename):
@@ -7,8 +7,8 @@ def index(request, pagename):
     pg = Page.objects.get(permalink=pagename)
     context = {
         'title': pg.title,
-        'contect':pg.bodytext,
-        'last_update': pg.update_date,
+        'content': pg.bodytext,
+        'last_updated': pg.update_date,
     }
     # assert False
     return render(request, 'pages/page.html', context)
