@@ -1,6 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+<title>
+    {% block title %}
+        Untitled Document
+    {% endblock title %}
+</title>
 <head>
     <meta charset="UTF-8">
     <title>Untitled Document</title>
@@ -19,9 +24,11 @@
         <aside id="leftsidebar">
             <nav id="nav">
                 <ul>
-                    <li>Menu 1</li>
-                    <li>Menu 2</li>
-                    <li>Menu 3</li>
+                    {% block sidenav %}
+                        <li>Menu 1</li>
+                        <li>Menu 2</li>
+                        <li>Menu 3</li>
+                    {% endblock sidenav %}
                 </ul>
             </nav>
         </aside>
